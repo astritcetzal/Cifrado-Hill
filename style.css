@@ -5,11 +5,11 @@
 }
 
 body {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-    background-color: #dbaeb8;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    background: linear-gradient(45deg, rgba(0, 255, 85, 0.993), rgb(56, 240, 240));
     color: #b94a98;
     margin: 0;
-    padding: 20px;
+    padding: 40px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -17,10 +17,10 @@ body {
 }
 
 .container {
-    background-color: #bee7ec;
+    background: linear-gradient(45deg, rgba(110, 173, 245, 0.993), rgb(223, 236, 150));
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 900px;
 }
@@ -138,17 +138,14 @@ button:active {
     transform: scale(0.98);
 }
 
-.resultado-box {
-    background-color: #e5d8ec;
-    border: 1px solid #aca1da;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 1.1em;
-    color: #6e2eaa;
-    margin-top: 15px;
-    min-height: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+.resultado-encriptado {
+    background-color: #e0f7fa; /* azul claro */
+    border: 2px solid #00acc1;
+}
 
+.resultado-desencriptado {
+    background-color: #f1f8e9; /* verde claro */
+    border: 2px solid #7cb342;
 }
 
 .error {

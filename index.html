@@ -8,42 +8,80 @@
 </head>
 <body>
     <div class="container">
-        <h1>Encriptación Hill</h1>
-        <p class="subtitle" > Tecnológico de Software - Fundamentos de Álgebra - Astrit Airan Cetzal Cetzal - Jorge Javier Pedrozo Romero - Grupo 1C </p>
-        <p style=" text-align: center;"> Actividad #21</p>
-        
-        <div class="section">
-            <label for="mensaje">Mensaje (máx. 30 caracteres)</label>
-            <textarea id="mensaje" maxlength="30" placeholder="Escribe tu mensaje aquí..."></textarea>
-            <div class="char-count">0/30</div>
+        <h1>Hill Cipher</h1>
+
+        <!-- Botones de navegación -->
+        <div class="nav-buttons">
+            <button onclick="mostrarSeccion('encriptar')" id="btnEncriptarNav" class="activo">ENCRIPTAR</button>
+            <button onclick="mostrarSeccion('desencriptar')" id="btnDesencriptarNav">DESENCRIPTAR</button>
         </div>
 
-        <div class="section">
-            <h3>Matriz del mensaje</h3>
-            <div id="matrizMensaje" class="matriz-display"></div>
-        </div>
+        <p class="subtitle">Tecnológico de Software - Fundamentos de Álgebra - Astrit Airan Cetzal Cetzal - Jorge Javier Pedrozo Romero - Grupo 1C</p>
+        <p style="text-align: center;">Actividad #21</p>
 
-        <div class="section">
-            <h3>Matriz clave (2x2)</h3>
-            <div class="matriz-input">
-                <input type="number" id="k11" placeholder="a">
-                <input type="number" id="k12" placeholder="b">
-                <input type="number" id="k21" placeholder="c">
-                <input type="number" id="k22" placeholder="d">
+        <!-- Sección ENCRIPTAR -->
+        <div id="seccionEncriptar">
+            <div class="section">
+                <label for="mensaje">Mensaje (máx. 30 caracteres)</label>
+                <textarea id="mensaje" maxlength="30" placeholder="Escribe tu mensaje aquí..."></textarea>
+                <div class="char-count">0/30</div>
+            </div>
+
+            <div class="section">
+                <h3>Matriz del mensaje</h3>
+                <div id="matrizMensaje" class="matriz-display"></div>
+            </div>
+
+            <div class="section">
+                <h3>Matriz clave (2x2)</h3>
+                <div class="matriz-input">
+                    <input type="number" id="k11" placeholder="a">
+                    <input type="number" id="k12" placeholder="b">
+                    <input type="number" id="k21" placeholder="c">
+                    <input type="number" id="k22" placeholder="d">
+                </div>
+            </div>
+
+            <button id="encriptar">Encriptar</button>
+
+            <div class="section">
+                <h3>Resultado encriptado</h3>
+                <div id="resultado" class="resultado-box resultado-encriptado"></div>
             </div>
         </div>
 
-        <button id="encriptar">Encriptar</button>
-
-        <div class="section">
-            <h3>Resultado</h3>
-            <div id="resultado" class="resultado-box"></div>
+        <!-- Sección DESENCRIPTAR -->
+        <div id="seccionDesencriptar" style="display:none;">
+            <div class="section">
+                <h3>Resultado desencriptado</h3>
+                <div id="resultadoDesencriptado" class="resultado-box resultado-desencriptado"></div>
+            </div>
+            <button id="desencriptar">Desencriptar</button>
         </div>
     </div>
 
     <script src="script.js"></script>
 
+    <!-- Script para alternar secciones -->
+    <script>
+        function mostrarSeccion(seccion) {
+            const encriptar = document.getElementById('seccionEncriptar');
+            const desencriptar = document.getElementById('seccionDesencriptar');
+            const btnEnc = document.getElementById('btnEncriptarNav');
+            const btnDes = document.getElementById('btnDesencriptarNav');
 
-
+            if (seccion === 'encriptar') {
+                encriptar.style.display = 'block';
+                desencriptar.style.display = 'none';
+                btnEnc.classList.add('activo');
+                btnDes.classList.remove('activo');
+            } else {
+                encriptar.style.display = 'none';
+                desencriptar.style.display = 'block';
+                btnEnc.classList.remove('activo');
+                btnDes.classList.add('activo');
+            }
+        }
+    </script>
 </body>
 </html>
